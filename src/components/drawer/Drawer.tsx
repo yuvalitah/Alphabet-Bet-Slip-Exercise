@@ -9,16 +9,11 @@ interface IDrawerProps {
 }
 
 export const Drawer = ({ isOpen, handleDrawerToggle }: IDrawerProps) => (
-  <MuiDrawer
-    variant="temporary"
-    open={isOpen}
-    onClose={handleDrawerToggle}
-    sx={{ display: { xs: "block", sm: "none" } }}
-  >
+  <MuiDrawer variant="temporary" open={isOpen} onClose={handleDrawerToggle}>
     <Box textAlign="center" flex={1}>
       <DrawerTitle />
       <Divider />
-      <Box mt={3}>
+      <Box mt={3} sx={{ display: { xs: "block", sm: "none" } }}>
         <ThemeToggle />
       </Box>
     </Box>

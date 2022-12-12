@@ -6,7 +6,7 @@ export const DrawerTitle = () => (
   <Box display="flex" alignItems="center" justifyContent="center">
     <CasinoIcon fontSize="large" />
     <Typography variant="h5" m={2}>
-      Bet Slip App!
+      Bet Slip
     </Typography>
   </Box>
 );
