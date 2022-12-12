@@ -43,7 +43,7 @@ export const ThemeProvider = ({ children }: IThemeProviderProps) => {
   return (
     <ThemeModeContext.Provider value={themeMode}>
       <MuiThemeProvider theme={theme}>
-        <CssBaseline />
+        <CssBaseline enableColorScheme />
         {children}
       </MuiThemeProvider>
     </ThemeModeContext.Provider>

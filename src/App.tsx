@@ -1,11 +1,12 @@
 import React from "react";
-import { Header } from "./components";
+import { Header, Market } from "./components";
 import { ThemeProvider } from "./context";
 
 function App() {
   return (
     <ThemeProvider>
       <Header />
+      <Market />
     </ThemeProvider>
   );
 }
