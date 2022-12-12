@@ -6,7 +6,7 @@ interface ISortingListItemProps {
 }
 
 export const SortingListItem = ({ title }: ISortingListItemProps) => (
-  <ListItem>
+  <ListItem disablePadding>
     <ListItemButton
       onClick={() => console.log(`You just sorted for: ${title}`)}
     >
