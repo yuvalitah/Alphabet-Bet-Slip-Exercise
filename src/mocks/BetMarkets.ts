@@ -22,17 +22,17 @@ export const BET_MARKETS: IBetMarket[] = [
     title: "Moneyline",
     options: [
       {
-        id: 1,
+        id: 3,
         title: "Home",
         odd: -195,
       },
       {
-        id: 2,
+        id: 4,
         title: "Draw",
         odd: +280,
       },
       {
-        id: 3,
+        id: 5,
         title: "Away",
         odd: +650,
       },
@@ -43,12 +43,12 @@ export const BET_MARKETS: IBetMarket[] = [
     title: "Tie No Bet",
     options: [
       {
-        id: 1,
+        id: 6,
         title: "France",
         odd: -700,
       },
       {
-        id: 2,
+        id: 7,
         title: "Morocco",
         odd: +440,
       },
@@ -59,32 +59,32 @@ export const BET_MARKETS: IBetMarket[] = [
     title: "Anytime Goalscorer",
     options: [
       {
-        id: 1,
+        id: 8,
         title: "Kylian Mbappe",
         odd: +130,
       },
       {
-        id: 2,
+        id: 9,
         title: "Olivier Giroud",
         odd: +190,
       },
       {
-        id: 3,
+        id: 10,
         title: "Marcus Thuram",
         odd: +210,
       },
       {
-        id: 4,
+        id: 11,
         title: "Randal Kolo Muani",
         odd: +250,
       },
       {
-        id: 5,
+        id: 12,
         title: "Antoine Griezmann",
         odd: +260,
       },
       {
-        id: 6,
+        id: 13,
         title: "Kingsley Coman",
         odd: +310,
       },
@@ -95,12 +95,12 @@ export const BET_MARKETS: IBetMarket[] = [
     title: "Over/Under 0.5 Goals",
     options: [
       {
-        id: 1,
+        id: 14,
         title: "Over",
         odd: -1300,
       },
       {
-        id: 2,
+        id: 15,
         title: "Under",
         odd: +820,
       },
@@ -111,12 +111,12 @@ export const BET_MARKETS: IBetMarket[] = [
     title: "Over/Under 1.5 Goals",
     options: [
       {
-        id: 1,
+        id: 16,
         title: "Over",
         odd: -250,
       },
       {
-        id: 2,
+        id: 17,
         title: "Under",
         odd: +200,
       },
@@ -127,12 +127,12 @@ export const BET_MARKETS: IBetMarket[] = [
     title: "Over/Under 2.5 Goals",
     options: [
       {
-        id: 1,
+        id: 18,
         title: "Over",
         odd: +126,
       },
       {
-        id: 2,
+        id: 19,
         title: "Under",
         odd: -152,
       },

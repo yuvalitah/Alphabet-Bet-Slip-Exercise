@@ -1,2 +1,2 @@
 export * from "./BetMarkets";
-export * from "./Bet";
+export * from "./BetSlipItem";

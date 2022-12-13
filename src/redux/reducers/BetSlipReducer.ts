@@ -1,9 +1,9 @@
-// import { AnyAction } from "@reduxjs/toolkit";
-import { BET_SLIP_ACTIONS, BetActionTypes } from "../actions";
-import { IBet } from "../../interfaces";
+import { AnyAction } from "@reduxjs/toolkit";
+import { BET_SLIP_ACTIONS } from "../actions";
+import { IBetSlipItem } from "../../interfaces";
 
 interface IBetSlipState {
-  bets: IBet[];
+  bets: IBetSlipItem[];
 }
 
 const initialState: IBetSlipState = {
@@ -12,7 +12,7 @@ const initialState: IBetSlipState = {
 
 export const BetSlipReducer = (
   state: IBetSlipState = initialState,
-  action: BetActionTypes
+  action: AnyAction
 ): IBetSlipState => {
   switch (action.type) {
     case BET_SLIP_ACTIONS.ADD_BET:
@@ -24,10 +24,7 @@ export const BetSlipReducer = (
     case BET_SLIP_ACTIONS.REMOVE_BET:
       return {
         ...state,
-        bets: state.bets.filter(
-          ({ id, marketId }) =>
-            id === action.payload.id && marketId === action.payload.marketId
-        ),
+        bets: state.bets.filter(({ id }) => id !== action.payload),
       };
 
     default:

@@ -1,4 +1,4 @@
 import { RootState } from "../store";
-import { IBet } from "../../interfaces";
+import { IBetSlipItem } from "../../interfaces";
 
-export const betSlipSelector = (state: RootState): IBet[] => state.bets;
+export const betSlipSelector = (state: RootState): IBetSlipItem[] => state.bets;
