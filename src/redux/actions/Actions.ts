@@ -1,0 +1,4 @@
+export const BET_SLIP_ACTIONS = {
+  ADD_BET: "ADD_BET",
+  REMOVE_BET: "REMOVE_BET",
+};
