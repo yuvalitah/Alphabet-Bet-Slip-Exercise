@@ -1,6 +1,7 @@
 import React from "react";
 import { styled, Paper } from "@mui/material";
 import { SortingList } from "../../sortingList";
+import { GameDetails } from "../../gameDetails";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   display: "flex",
@@ -13,6 +14,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 export const Market = () => {
   return (
     <StyledPaper>
+      <GameDetails />
       <SortingList />
     </StyledPaper>
   );
