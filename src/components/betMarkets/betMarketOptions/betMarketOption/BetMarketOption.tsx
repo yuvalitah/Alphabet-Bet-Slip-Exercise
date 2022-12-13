@@ -19,7 +19,7 @@ interface IBetMarketOptionProps {
 }
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "light" ? "#E7EBF0" : "#1A2027",
+  backgroundColor: theme.palette.mode === "light" ? "#dfedff" : "#1A2027",
 }));
 
 export const BetMarketOption = ({
@@ -39,7 +39,7 @@ export const BetMarketOption = ({
             : dispatch(addNewBetSlipAction({ id, title, marketTitle, odd }))
         }
       >
-        <StyledCard sx={{ backgroundColor: isSelected ? "green" : "unset" }}>
+        <StyledCard sx={{ backgroundColor: isSelected ? "green" : "" }}>
           <CardContent
             sx={{
               display: "flex",
