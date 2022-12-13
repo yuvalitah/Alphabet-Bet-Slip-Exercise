@@ -39,7 +39,7 @@ export const BetMarketOption = ({
             : dispatch(addNewBetSlipAction({ id, title, marketTitle, odd }))
         }
       >
-        <StyledCard>
+        <StyledCard sx={{ backgroundColor: isSelected ? "green" : "unset" }}>
           <CardContent
             sx={{
               display: "flex",
