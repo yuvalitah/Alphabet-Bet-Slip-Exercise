@@ -1,6 +1,6 @@
-import { IBet } from "../interfaces";
+import { IBetMarket } from "../interfaces";
 
-export const BETS: IBet[] = [
+export const BET_MARKETS: IBetMarket[] = [
   {
     id: 1,
     title: "To Qualify for the Next Round",

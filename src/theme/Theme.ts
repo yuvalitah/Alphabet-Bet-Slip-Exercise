@@ -13,5 +13,23 @@ export const createTheme = (mode: PaletteMode) =>
           },
         },
       },
+      MuiAccordion: {
+        styleOverrides: {
+          root: {
+            ":before": {
+              display: "none",
+            },
+          },
+        },
+      },
+      MuiCardContent: {
+        styleOverrides: {
+          root: {
+            ":last-child": {
+              paddingBottom: 16,
+            },
+          },
+        },
+      },
     },
   });
