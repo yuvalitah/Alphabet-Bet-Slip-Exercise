@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, IconButton } from "@mui/material";
+import { Typography, Box, IconButton, Divider } from "@mui/material";
 import { useBets } from "../../../../hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
@@ -40,12 +40,15 @@ export const BetSlipContentDetails = ({
           France V Morocco
         </Typography>
         {bets.map((bet) => (
-          <BetSlipItem key={bet.id} variant={variant} bet={bet} />
+          <Box key={bet.id}>
+            <BetSlipItem variant={variant} bet={bet} />
+            {variant === "single" && <Divider key={bet.id} sx={{ mt: 2 }} />}
+          </Box>
         ))}
         {variant === "builder" && <BetSlipWagerInput variant="builder" />}
       </Box>
       {variant === "builder" && (
-        <Box display="flex" flexDirection="column" gap={1}>
+        <Box display="flex" flexDirection="column" gap={1} mr={1}>
           <IconButton onClick={() => dispatch(removeAllBets())}>
             <DeleteIcon fontSize="large" />
           </IconButton>
