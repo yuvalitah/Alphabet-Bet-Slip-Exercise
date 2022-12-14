@@ -32,6 +32,7 @@ export const BetSlipReducer = (
     case BET_SLIP_ACTIONS.REMOVE_ALL_BETS:
       return {
         ...state,
+        builderWager: 0,
         bets: [],
       };
 

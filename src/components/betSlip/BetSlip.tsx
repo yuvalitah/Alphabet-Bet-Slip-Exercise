@@ -1,10 +1,19 @@
 import React from "react";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Typography, Divider, Button } from "@mui/material";
 import { BetSlipContent } from "./betSlipContent";
-import { useBets } from "../../hooks";
+import { useBets, useIsBetSlipValid } from "../../hooks";
+import { useDispatch } from "react-redux";
+import { removeAllBets } from "../../redux/actions";
 
 export const BetSlip = () => {
   const bets = useBets();
+  const isBetSlipValid = useIsBetSlipValid();
+  const dispatch = useDispatch();
+
+  const postBets = (): void => {
+    dispatch(removeAllBets());
+  };
+
   return (
     <Box
       display="flex"
@@ -17,6 +26,15 @@ export const BetSlip = () => {
           <BetSlipContent variant="builder" />
           <Divider />
           <BetSlipContent variant="single" />
+          <Button
+            variant="contained"
+            color="success"
+            disabled={!isBetSlipValid}
+            sx={{ minHeight: 50 }}
+            onClick={postBets}
+          >
+            Place Your Bets!
+          </Button>
         </>
       ) : (
         <Typography variant="h5" color="GrayText" mt={2}>
