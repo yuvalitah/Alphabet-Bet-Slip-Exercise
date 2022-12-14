@@ -4,7 +4,7 @@ import { useBets } from "../../../../hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { removeAllBets } from "../../../../redux/actions";
-import { BetSlipBuilderItem } from "./betSlipBuilderItem";
+import { BetSlipBuilderItem } from "../betSlipItem";
 import { BetSlipWagerInput } from "../betSlipWagerInput";
 
 export const BetSlipBuilder = () => {

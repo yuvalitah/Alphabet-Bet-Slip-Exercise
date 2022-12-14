@@ -1,7 +1,7 @@
 import React from "react";
-import { IBetSlipItem } from "../../../../../interfaces";
+import { IBetSlipItem } from "../../../../interfaces";
 import { Box, Typography, IconButton } from "@mui/material";
-import { removeBet } from "../../../../../redux/actions";
+import { removeBet } from "../../../../redux/actions";
 import { useDispatch } from "react-redux";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
