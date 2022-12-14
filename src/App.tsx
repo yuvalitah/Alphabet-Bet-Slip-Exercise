@@ -1,12 +1,14 @@
 import React from "react";
 import { Header, Market } from "./components";
-import { ThemeProvider } from "./context";
+import { ThemeProvider, SnackbarProvider } from "./context";
 
 function App() {
   return (
     <ThemeProvider>
-      <Header />
-      <Market />
+      <SnackbarProvider>
+        <Header />
+        <Market />
+      </SnackbarProvider>
     </ThemeProvider>
   );
 }
