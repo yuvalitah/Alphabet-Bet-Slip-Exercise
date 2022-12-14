@@ -37,11 +37,14 @@ export const BetSlipWagerInput = ({
   };
 
   return (
-    <Box display="flex">
+    <Box
+      display="flex"
+      justifyContent={variant === "builder" ? "center" : "unset"}
+    >
       <TextField
         label="Wager"
         type="number"
-        value={wager}
+        defaultValue={wager}
         InputProps={{
           inputProps: { min: 0 },
           endAdornment: (
@@ -50,6 +53,7 @@ export const BetSlipWagerInput = ({
             </InputAdornment>
           ),
         }}
+        sx={{ maxWidth: 150 }}
         onChange={onChangeWagerAmount}
       />
     </Box>

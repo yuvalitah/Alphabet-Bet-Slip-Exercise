@@ -13,7 +13,7 @@ interface IBetSlipItemProps {
 
 export const BetSlipItem = ({ variant, bet }: IBetSlipItemProps) => {
   const dispatch = useDispatch();
-  const { id, marketTitle, title } = bet;
+  const { id, marketTitle, title, odds } = bet;
 
   return (
     <Box display="flex" alignItems="center" gap={1}>
@@ -26,9 +26,16 @@ export const BetSlipItem = ({ variant, bet }: IBetSlipItemProps) => {
         gap={variant === "single" ? 2 : 0}
       >
         <Box display="flex" flexDirection="column">
-          <Typography variant="subtitle1" textAlign="start">
-            {title}
-          </Typography>
+          <Box display="flex" justifyContent="space-between">
+            <Typography variant="subtitle1" textAlign="start">
+              {title}
+            </Typography>
+            {variant === "single" && (
+              <Typography variant="subtitle1" color={odds > 0 ? "blue" : "red"}>
+                {odds > 0 ? `+${odds}` : odds}
+              </Typography>
+            )}
+          </Box>
           <Typography variant="body1" color="GrayText" textAlign="start">
             {marketTitle}
           </Typography>

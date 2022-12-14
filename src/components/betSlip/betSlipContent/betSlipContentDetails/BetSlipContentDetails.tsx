@@ -49,7 +49,11 @@ export const BetSlipContentDetails = ({
           <IconButton onClick={() => dispatch(removeAllBets())}>
             <DeleteIcon fontSize="large" />
           </IconButton>
-          <Typography variant="subtitle1" mr={1.5}>
+          <Typography
+            variant="subtitle1"
+            color={betSlipBuilderOddsSummary > 0 ? "blue" : "red"}
+            mr={1.5}
+          >
             {betSlipBuilderOddsSummary > 0
               ? `+${betSlipBuilderOddsSummary}`
               : betSlipBuilderOddsSummary}
