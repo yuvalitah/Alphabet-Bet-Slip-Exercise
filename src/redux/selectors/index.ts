@@ -1,2 +1,2 @@
 export * from "./BetSlipSelector";
-export * from "./BetBuilderWager";
+export * from "./BuilderWager";

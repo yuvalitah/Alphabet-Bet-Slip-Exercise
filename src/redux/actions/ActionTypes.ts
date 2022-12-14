@@ -15,7 +15,7 @@ interface IRemoveAllBetsActionType {
   type: typeof BET_SLIP_ACTIONS.REMOVE_ALL_BETS;
 }
 
-interface IChangeBetBuilderWagerActionType {
+interface IChangeBuilderWagerActionType {
   type: typeof BET_SLIP_ACTIONS.CHANGE_BET_BUILDER_WAGER;
   payload: number;
 }
@@ -32,5 +32,5 @@ export type BetActionTypes =
   | IAddBetActionType
   | IRemoveBetActionType
   | IRemoveAllBetsActionType
-  | IChangeBetBuilderWagerActionType
+  | IChangeBuilderWagerActionType
   | IChangeSingleBetWagerActionType;

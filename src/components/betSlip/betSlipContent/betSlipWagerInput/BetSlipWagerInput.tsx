@@ -3,10 +3,10 @@ import { TextField, InputAdornment, Box } from "@mui/material";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { useDispatch } from "react-redux";
 import {
-  changeBetBuilderWager,
+  changeBuilderWager,
   changeSingleBetWager,
 } from "../../../../redux/actions";
-import { useBetBuilderWager } from "../../../../hooks";
+import { useBuilderWager } from "../../../../hooks";
 import { IBetSlipItem } from "../../../../interfaces";
 
 interface IBetSlipWagerInputProps {
@@ -18,9 +18,9 @@ export const BetSlipWagerInput = ({
   variant,
   bet,
 }: IBetSlipWagerInputProps) => {
-  const betBuilderWager = useBetBuilderWager();
+  const builderWager = useBuilderWager();
   const [wager, setWager] = useState(
-    variant === "single" ? bet?.wager : betBuilderWager
+    variant === "single" ? bet?.wager : builderWager
   );
   const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ export const BetSlipWagerInput = ({
     const wager = parseInt(event.target.value);
     dispatch(
       variant === "builder"
-        ? changeBetBuilderWager(wager)
+        ? changeBuilderWager(wager)
         : changeSingleBetWager(bet ? bet.id : 0, wager)
     );
     setWager(wager);

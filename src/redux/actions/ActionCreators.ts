@@ -16,7 +16,7 @@ export const removeAllBets = (): BetActionTypes => ({
   type: BET_SLIP_ACTIONS.REMOVE_ALL_BETS,
 });
 
-export const changeBetBuilderWager = (wager: number): BetActionTypes => ({
+export const changeBuilderWager = (wager: number): BetActionTypes => ({
   type: BET_SLIP_ACTIONS.CHANGE_BET_BUILDER_WAGER,
   payload: wager,
 });
