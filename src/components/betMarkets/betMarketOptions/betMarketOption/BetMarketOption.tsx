@@ -13,6 +13,7 @@ import { useIsBetSelected } from "../../../../hooks";
 import { useDispatch } from "react-redux";
 
 interface IBetMarketOptionProps {
+  marketId: number;
   marketTitle: string;
   betMarketOption: IBetMarketOption;
   alignment: "horizontal" | "vertical";
@@ -23,6 +24,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 export const BetMarketOption = ({
+  marketId,
   marketTitle,
   betMarketOption: { id, title, odds },
   alignment,
@@ -36,7 +38,9 @@ export const BetMarketOption = ({
         onClick={() =>
           isSelected
             ? dispatch(removeBet(id))
-            : dispatch(addNewBet({ id, title, marketTitle, odds, wager: 0 }))
+            : dispatch(
+                addNewBet({ id, marketId, title, marketTitle, odds, wager: 0 })
+              )
         }
       >
         <StyledCard sx={{ backgroundColor: isSelected ? "green" : "" }}>

@@ -22,7 +22,11 @@ export const BetMarket = ({
         <Typography variant="h6">{title}</Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <BetMarketOptions marketTitle={title} betMarketOptions={options} />
+        <BetMarketOptions
+          marketId={id}
+          marketTitle={title}
+          betMarketOptions={options}
+        />
       </AccordionDetails>
     </Accordion>
   );
