@@ -38,6 +38,16 @@ export const BetSlipReducer = (
     case BET_SLIP_ACTIONS.CHANGE_BET_BUILDER_WAGER:
       return { ...state, betBuilderWager: action.payload };
 
+    case BET_SLIP_ACTIONS.CHANGE_SINGLE_BET_WAGER:
+      return {
+        ...state,
+        bets: state.bets.map((bet) =>
+          bet.id === action.payload.id
+            ? { ...bet, wager: action.payload.wager }
+            : bet
+        ),
+      };
+
     default:
       return state;
   }

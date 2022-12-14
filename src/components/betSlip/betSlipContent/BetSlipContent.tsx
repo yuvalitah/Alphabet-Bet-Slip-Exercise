@@ -6,7 +6,7 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { BetSlipBuilder } from "./betSlipBuilder";
+import { BetSlipContentDetails } from "./betSlipContentDetails";
 
 interface IBetSlipContentProps {
   variant: "single" | "builder";
@@ -20,7 +20,7 @@ export const BetSlipContent = ({ variant }: IBetSlipContentProps) => (
       </Typography>
     </AccordionSummary>
     <AccordionDetails>
-      {variant === "single" ? "" : <BetSlipBuilder />}
+      <BetSlipContentDetails variant={variant} />
     </AccordionDetails>
   </Accordion>
 );

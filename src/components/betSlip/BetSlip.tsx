@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Divider } from "@mui/material";
 import { BetSlipContent } from "./betSlipContent";
 import { useBets } from "../../hooks";
 
@@ -13,7 +13,11 @@ export const BetSlip = () => {
       sx={{ mt: { xs: 2, sm: 0 } }}
     >
       {bets.length ? (
-        <BetSlipContent variant="builder" />
+        <>
+          <BetSlipContent variant="builder" />
+          <Divider />
+          <BetSlipContent variant="single" />
+        </>
       ) : (
         <Typography variant="h5" color="GrayText" mt={2}>
           Please Add Bets

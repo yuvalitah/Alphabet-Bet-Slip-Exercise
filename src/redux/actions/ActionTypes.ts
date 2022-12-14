@@ -20,8 +20,17 @@ interface IChangeBetBuilderWagerActionType {
   payload: number;
 }
 
+interface IChangeSingleBetWagerActionType {
+  type: typeof BET_SLIP_ACTIONS.CHANGE_SINGLE_BET_WAGER;
+  payload: {
+    id: number;
+    wager: number;
+  };
+}
+
 export type BetActionTypes =
   | IAddBetActionType
   | IRemoveBetActionType
   | IRemoveAllBetsActionType
-  | IChangeBetBuilderWagerActionType;
+  | IChangeBetBuilderWagerActionType
+  | IChangeSingleBetWagerActionType;

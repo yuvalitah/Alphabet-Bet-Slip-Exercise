@@ -20,3 +20,14 @@ export const changeBetBuilderWager = (wager: number): BetActionTypes => ({
   type: BET_SLIP_ACTIONS.CHANGE_BET_BUILDER_WAGER,
   payload: wager,
 });
+
+export const changeSingleBetWager = (
+  id: number,
+  wager: number
+): BetActionTypes => ({
+  type: BET_SLIP_ACTIONS.CHANGE_SINGLE_BET_WAGER,
+  payload: {
+    id,
+    wager,
+  },
+});
