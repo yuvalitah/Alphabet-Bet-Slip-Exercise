@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Divider, Button } from "@mui/material";
 import { BetSlipContent } from "./betSlipContent";
-import { useBets, useIsBetSlipValid } from "../../hooks";
+import { useBets, useIsBetSlipValid, useSnackbar } from "../../hooks";
 import { useDispatch } from "react-redux";
 import { removeAllBets } from "../../redux/actions";
 
@@ -13,10 +13,12 @@ export const BetSlip = ({ closeDrawer }: IBetSlipProps) => {
   const bets = useBets();
   const isBetSlipValid = useIsBetSlipValid();
   const dispatch = useDispatch();
+  const { openSnackbar } = useSnackbar();
 
   const postBets = (): void => {
     dispatch(removeAllBets());
     closeDrawer();
+    openSnackbar("You successfully enter your Bets! GOOD LUCK!!", "success");
   };
 
   return (

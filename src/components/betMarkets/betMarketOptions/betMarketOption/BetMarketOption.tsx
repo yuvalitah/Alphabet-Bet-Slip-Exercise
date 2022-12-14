@@ -1,5 +1,5 @@
 import React from "react";
-import { IBetMarketOption } from "../../../../interfaces";
+import { IBetMarketOption, IBetSlipItem } from "../../../../interfaces";
 import {
   Card,
   CardContent,
@@ -9,7 +9,7 @@ import {
   Grid,
 } from "@mui/material";
 import { addNewBet, removeBet } from "../../../../redux/actions";
-import { useIsBetSelected } from "../../../../hooks";
+import { useIsBetSelected, useSnackbar } from "../../../../hooks";
 import { useDispatch } from "react-redux";
 
 interface IBetMarketOptionProps {
@@ -31,16 +31,35 @@ export const BetMarketOption = ({
 }: IBetMarketOptionProps) => {
   const dispatch = useDispatch();
   const isSelected = useIsBetSelected(id);
+  const { openSnackbar } = useSnackbar();
+
+  const addBetToBetSlip = (bet: IBetSlipItem): void => {
+    dispatch(addNewBet({ id, marketId, title, marketTitle, odds, wager: 0 }));
+    openSnackbar("The Bet was added successfully to the Bet Slip!", "success");
+  };
+
+  const removeBetFromBetSlip = (id: number): void => {
+    dispatch(removeBet(id));
+    openSnackbar(
+      "The Bet was removed successfully from the Bet Slip!",
+      "success"
+    );
+  };
 
   return (
     <Grid item xs={12} sm={alignment === "horizontal" ? 12 : 4}>
       <CardActionArea
         onClick={() =>
           isSelected
-            ? dispatch(removeBet(id))
-            : dispatch(
-                addNewBet({ id, marketId, title, marketTitle, odds, wager: 0 })
-              )
+            ? removeBetFromBetSlip(id)
+            : addBetToBetSlip({
+                id,
+                marketId,
+                title,
+                marketTitle,
+                odds,
+                wager: 0,
+              })
         }
       >
         <StyledCard sx={{ backgroundColor: isSelected ? "green" : "" }}>

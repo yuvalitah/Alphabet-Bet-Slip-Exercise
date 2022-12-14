@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box, IconButton, Divider } from "@mui/material";
-import { useBets } from "../../../../hooks";
+import { useBets, useSnackbar } from "../../../../hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { removeAllBets } from "../../../../redux/actions";
@@ -20,6 +20,15 @@ export const BetSlipContentDetails = ({
     (sum, nextBet) => sum + nextBet.odds,
     0
   );
+  const { openSnackbar } = useSnackbar();
+
+  const removeAllBetsFromBetSlip = (): void => {
+    dispatch(removeAllBets());
+    openSnackbar(
+      "All Bets has been successfully removed from the Bet Slip",
+      "success"
+    );
+  };
 
   return (
     <Box display="flex">
@@ -49,7 +58,7 @@ export const BetSlipContentDetails = ({
       </Box>
       {variant === "builder" && (
         <Box display="flex" flexDirection="column" gap={1} mr={1}>
-          <IconButton onClick={() => dispatch(removeAllBets())}>
+          <IconButton onClick={() => removeAllBetsFromBetSlip()}>
             <DeleteIcon fontSize="large" />
           </IconButton>
           <Typography

@@ -5,6 +5,7 @@ import { removeBet } from "../../../../redux/actions";
 import { useDispatch } from "react-redux";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { BetSlipWagerInput } from "../betSlipWagerInput";
+import { useSnackbar } from "../../../../hooks";
 
 interface IBetSlipItemProps {
   variant: "single" | "builder";
@@ -14,10 +15,19 @@ interface IBetSlipItemProps {
 export const BetSlipItem = ({ variant, bet }: IBetSlipItemProps) => {
   const dispatch = useDispatch();
   const { id, marketTitle, title, odds } = bet;
+  const { openSnackbar } = useSnackbar();
+
+  const removeBetFromBetSlip = (id: number): void => {
+    dispatch(removeBet(id));
+    openSnackbar(
+      "The Bet was removed successfully from the Bet Slip!",
+      "error"
+    );
+  };
 
   return (
     <Box display="flex" alignItems="center" gap={1}>
-      <IconButton onClick={() => dispatch(removeBet(id))}>
+      <IconButton onClick={() => removeBetFromBetSlip(id)}>
         <RemoveCircleOutlineIcon color="error" />
       </IconButton>
       <Box
