@@ -5,13 +5,18 @@ import { useBets, useIsBetSlipValid } from "../../hooks";
 import { useDispatch } from "react-redux";
 import { removeAllBets } from "../../redux/actions";
 
-export const BetSlip = () => {
+interface IBetSlipProps {
+  closeDrawer: () => void;
+}
+
+export const BetSlip = ({ closeDrawer }: IBetSlipProps) => {
   const bets = useBets();
   const isBetSlipValid = useIsBetSlipValid();
   const dispatch = useDispatch();
 
   const postBets = (): void => {
     dispatch(removeAllBets());
+    closeDrawer();
   };
 
   return (

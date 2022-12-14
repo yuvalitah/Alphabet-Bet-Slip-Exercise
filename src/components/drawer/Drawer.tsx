@@ -12,12 +12,12 @@ interface IDrawerProps {
 export const Drawer = ({ isOpen, handleDrawerToggle }: IDrawerProps) => (
   <MuiDrawer variant="temporary" open={isOpen} onClose={handleDrawerToggle}>
     <Box display="flex" flexDirection="column" textAlign="center" flex={1}>
-      <DrawerTitle />
+      <DrawerTitle closeDrawer={handleDrawerToggle} />
       <Divider />
       <Box mt={3} sx={{ display: { xs: "block", sm: "none" } }}>
         <ThemeToggle />
       </Box>
-      <BetSlip />
+      <BetSlip closeDrawer={handleDrawerToggle} />
     </Box>
   </MuiDrawer>
 );
