@@ -4,10 +4,12 @@ import { IBetSlipItem } from "../../interfaces";
 
 interface IBetSlipState {
   bets: IBetSlipItem[];
+  betBuilderWager: number;
 }
 
 const initialState: IBetSlipState = {
   bets: [],
+  betBuilderWager: 0,
 };
 
 export const BetSlipReducer = (
@@ -26,6 +28,15 @@ export const BetSlipReducer = (
         ...state,
         bets: state.bets.filter(({ id }) => id !== action.payload),
       };
+
+    case BET_SLIP_ACTIONS.REMOVE_ALL_BETS:
+      return {
+        ...state,
+        bets: [],
+      };
+
+    case BET_SLIP_ACTIONS.CHANGE_BET_BUILDER_WAGER:
+      return { ...state, betBuilderWager: action.payload };
 
     default:
       return state;

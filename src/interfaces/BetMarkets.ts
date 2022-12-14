@@ -1,7 +1,7 @@
 export interface IBetMarketOption {
   id: number;
   title: string;
-  odd: number;
+  odds: number;
 }
 
 export interface IBetMarket {

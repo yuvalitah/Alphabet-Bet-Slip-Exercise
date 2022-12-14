@@ -8,7 +8,7 @@ import {
   styled,
   Grid,
 } from "@mui/material";
-import { addNewBetSlipAction, removeBetSlip } from "../../../../redux/actions";
+import { addNewBet, removeBet } from "../../../../redux/actions";
 import { useIsBetSelected } from "../../../../hooks";
 import { useDispatch } from "react-redux";
 
@@ -24,7 +24,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 export const BetMarketOption = ({
   marketTitle,
-  betMarketOption: { id, title, odd },
+  betMarketOption: { id, title, odds },
   alignment,
 }: IBetMarketOptionProps) => {
   const dispatch = useDispatch();
@@ -35,8 +35,8 @@ export const BetMarketOption = ({
       <CardActionArea
         onClick={() =>
           isSelected
-            ? dispatch(removeBetSlip(id))
-            : dispatch(addNewBetSlipAction({ id, title, marketTitle, odd }))
+            ? dispatch(removeBet(id))
+            : dispatch(addNewBet({ id, title, marketTitle, odds, wager: 0 }))
         }
       >
         <StyledCard sx={{ backgroundColor: isSelected ? "green" : "" }}>
@@ -51,8 +51,8 @@ export const BetMarketOption = ({
             <Typography variant="subtitle2" flex={1}>
               {title}
             </Typography>
-            <Typography variant="subtitle2" color={odd > 0 ? "blue" : "red"}>
-              {odd > 0 ? `+${odd}` : odd}
+            <Typography variant="subtitle2" color={odds > 0 ? "blue" : "red"}>
+              {odds > 0 ? `+${odds}` : odds}
             </Typography>
           </CardContent>
         </StyledCard>

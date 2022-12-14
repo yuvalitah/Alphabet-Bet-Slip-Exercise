@@ -1,15 +1,26 @@
 import { createTheme as createMuiTheme, PaletteMode } from "@mui/material";
 
-export const createTheme = (mode: PaletteMode) =>
-  createMuiTheme({
+export const createTheme = (mode: PaletteMode) => {
+  const theme = createMuiTheme({
     palette: {
       mode,
     },
+  });
+
+  return createMuiTheme(theme, {
     components: {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            width: 240,
+            [theme.breakpoints.up("xs")]: {
+              width: "80%",
+            },
+            [theme.breakpoints.up("sm")]: {
+              width: "70%",
+            },
+            [theme.breakpoints.up("xl")]: {
+              width: "50%",
+            },
           },
         },
       },
@@ -33,3 +44,4 @@ export const createTheme = (mode: PaletteMode) =>
       },
     },
   });
+};
