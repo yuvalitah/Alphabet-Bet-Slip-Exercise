@@ -18,7 +18,7 @@ export const BetMarket = ({
 }: IBetMarketProps) => {
   return (
     <Accordion defaultExpanded={id === 1} disableGutters>
-      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon fontSize="large" />}>
         <Typography variant="h6">{title}</Typography>
       </AccordionSummary>
       <AccordionDetails>
