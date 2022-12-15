@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Alphabet-Bet-Slip-Exercise/static/css/main.cd548def.css",
-    "main.js": "/Alphabet-Bet-Slip-Exercise/static/js/main.b2670b7b.js",
+    "main.js": "/Alphabet-Bet-Slip-Exercise/static/js/main.dde8e226.js",
     "index.html": "/Alphabet-Bet-Slip-Exercise/index.html",
     "main.cd548def.css.map": "/Alphabet-Bet-Slip-Exercise/static/css/main.cd548def.css.map",
-    "main.b2670b7b.js.map": "/Alphabet-Bet-Slip-Exercise/static/js/main.b2670b7b.js.map"
+    "main.dde8e226.js.map": "/Alphabet-Bet-Slip-Exercise/static/js/main.dde8e226.js.map"
   },
   "entrypoints": [
     "static/css/main.cd548def.css",
-    "static/js/main.b2670b7b.js"
+    "static/js/main.dde8e226.js"
   ]
 }
