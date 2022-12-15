@@ -40,7 +40,13 @@ export const BetSlip = ({ closeDrawer }: IBetSlipProps) => {
             sx={{ minHeight: 50 }}
             onClick={postBets}
           >
-            Place Your Bets!
+            {isBetSlipValid ? (
+              <Typography variant="h6">Place Your Bets!</Typography>
+            ) : (
+              <Typography variant="h6" color="error">
+                Your selections or wagers are invalid!
+              </Typography>
+            )}
           </Button>
         </>
       ) : (
